@@ -16,17 +16,23 @@ let highscore = 0;
 again.addEventListener('click', resetGame);
 btn.addEventListener('click', checkInput);
 
+//helper functions
+
+function displayMessage(text) {
+  message.textContent = text;
+}
+
 //Event handler functions
 function checkInput() {
   const guess = Number(input.value);
 
   //When there's no input
   if (!guess) {
-    message.textContent = '⛔ Not a number!';
+    displayMessage('⛔ Not a number!');
 
     //When player win
   } else if (guess === numberToGuess) {
-    message.textContent = '🎉 Correct Number!';
+    displayMessage('🎉 Correct Number!');
     hiddenNum.textContent = numberToGuess;
     body.style.backgroundColor = '#60b347';
     hiddenNum.style.width = '30rem';
@@ -38,12 +44,11 @@ function checkInput() {
     //When number is high or low
   } else if (guess !== numberToGuess) {
     if (score > 1) {
-      message.textContent =
-        guess > numberToGuess ? '⬆️ Too High!' : '⬆️ Too Low!';
+      displayMessage(guess > numberToGuess ? '⬆️ Too High!' : '⬆️ Too Low!');
       score--;
       scoreEl.textContent = score;
     } else {
-      message.textContent = '💥 You lost the game!';
+      displayMessage('💥 You lost the game!');
       scoreEl.textContent = 0;
     }
   }
@@ -53,7 +58,7 @@ function resetGame() {
   score = 20;
   scoreEl.textContent = score;
   numberToGuess = Math.trunc(Math.random() * 20) + 1;
-  message.textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   hiddenNum.textContent = '?';
   body.style.backgroundColor = '#222';
   hiddenNum.style.width = '15rem';
