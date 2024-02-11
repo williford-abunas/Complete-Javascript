@@ -41,6 +41,7 @@ function checkInput() {
       highscore = score;
       highScore.textContent = highscore;
     }
+
     //When number is high or low
   } else if (guess !== numberToGuess) {
     if (score > 1) {
