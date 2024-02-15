@@ -3,7 +3,6 @@
 ///////////////////////////////////////
 // Scoping in Practice
 
-
 // function calcAge(birthYear) {
 //   const age = 2037 - birthYear;
 
@@ -41,7 +40,6 @@
 // calcAge(1991);
 // console.log(age);
 // printAge();
-
 
 ///////////////////////////////////////
 // Hoisting and TDZ in Practice
@@ -89,7 +87,6 @@
 // console.log(y === window.y);
 // console.log(z === window.z);
 
-
 ///////////////////////////////////////
 // The this Keyword in Practice
 // console.log(this);
@@ -124,7 +121,6 @@
 
 // const f = jonas.calcAge;
 // f();
-
 
 ///////////////////////////////////////
 // Regular Functions vs. Arrow Functions
@@ -174,7 +170,6 @@ var addArrow = (a, b) => {
 };
 addArrow(2, 5, 8);
 
-
 ///////////////////////////////////////
 // Objects vs. primitives
 let age = 30;
@@ -191,7 +186,6 @@ const friend = me;
 friend.age = 27;
 console.log('Friend:', friend);
 console.log('Me', me);
-
 
 ///////////////////////////////////////
 // Primitives vs. Objects in Practice
@@ -230,5 +224,3 @@ jessicaCopy.family.push('John');
 
 console.log('Before marriage:', jessica2);
 console.log('After marriage: ', jessicaCopy);
-*/
-
