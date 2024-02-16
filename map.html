@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Website Example</title>
+  </head>
+  <body>
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>This is the content of Section 1.</p>
+    </section>
+
+    <section id="section2">
+      <h2>Section 2</h2>
+      <p>This is the content of Section 2.</p>
+    </section>
+
+    <script>
+      // Create a Map to associate section elements with metadata
+      const sectionMetadataMap = new Map()
+
+      // Find the section elements and associate them with metadata
+      const section1Element = document.getElementById('section1')
+      const section2Element = document.getElementById('section2')
+
+      sectionMetadataMap.set(section1Element, {
+        backgroundColor: 'lightblue',
+        isVisible: true,
+      })
+      sectionMetadataMap.set(section2Element, {
+        backgroundColor: 'lightgreen',
+        isVisible: false,
+      })
+
+      // Later, you can use the Map to access metadata for a specific section
+      const metadataForSection1 = sectionMetadataMap.get(section1Element)
+      console.log(metadataForSection1)
+      const metadataForSection2 = sectionMetadataMap.get(section2Element)
+      // Modify metadata dynamically
+      // metadataForSection1.isVisible = false
+      metadataForSection2.isVisible = true
+
+      // You can also dynamically update the styles based on the metadata
+      section2Element.style.backgroundColor =
+        metadataForSection2.backgroundColor
+
+      section1Element.style.backgroundColor =
+        metadataForSection1.backgroundColor
+
+      section1Element.style.display = metadataForSection1.isVisible
+        ? 'block'
+        : 'none'
+
+      section2Element.style.display = metadataForSection2.isVisible
+        ? 'block'
+        : 'none'
+    </script>
+  </body>
+</html>

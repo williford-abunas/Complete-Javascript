@@ -79,3 +79,92 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+
+//SETS
+
+const orderSet = new Set(['pasta', 'pizza', 'pizza', 'rissotto', 'pasta']);
+console.log(orderSet);
+
+console.log(new Set('williford'));
+console.log(new Set('williford').size);
+
+//Set to array
+console.log([...orderSet]);
+
+//Set methods
+console.log(orderSet.has('pasta'));
+console.log(orderSet.add('garlic bread'));
+orderSet.clear();
+console.log(orderSet);
+
+//MAPS
+
+const rest = new Map();
+rest.set('name', 'Popopopoo');
+rest.set(1, 'Pilar');
+rest.set(2, 'Sapian');
+console.log(rest);
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are close');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+
+const time = 21;
+rest.get(time > rest.get('open') && time < rest.get('close'));
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
+// console.log(rest);
+rest.set([1, 2], 'TEst');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
+console.log(rest.get([1, 2]));
+
+const arr = [1, 2];
+rest.set(arr, 'test2');
+
+console.log(rest.get(arr));
+
+//MAP
+
+const question = new Map([
+  ['question', 'What is best?'],
+  [1, 'C'],
+  [2, 'java'],
+  [3, 'javascript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try Again'],
+]);
+console.log(question);
+
+//convert object to Map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//iteration
+// const answer = Number(prompt('Your answer'));
+
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// console.log(question.get(question.get('correct') === answer));
+
+//convert MAp to array
+console.log([...question]);
+
+//Coding Challenge 3
