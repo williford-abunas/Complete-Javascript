@@ -382,5 +382,5 @@ for (const flight of flights.split('+')) {
 
   const warning = `${output.includes('Delayed') ? '🔴' : ''}${output}`;
 
-  console.log(warning.padStart(45, ' '));
+  console.log(warning.padStart(45));
 }
