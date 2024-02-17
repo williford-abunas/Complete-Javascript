@@ -344,3 +344,22 @@ const planesInLine = function (n) {
 };
 
 planesInLine(5);
+
+//Coding Challenge 4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const textArea = document.querySelector('textarea');
+
+const button = document.querySelector('body button');
+
+button.addEventListener('click', function () {
+  const value = textArea.value;
+  const split = value.split('\n');
+  console.log(split);
+
+  let check = '';
+  for (const s of split) {
+    check += '✅';
+    console.log(`${s}   ${check}`);
+  }
+});
