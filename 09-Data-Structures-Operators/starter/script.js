@@ -355,11 +355,16 @@ const button = document.querySelector('body button');
 button.addEventListener('click', function () {
   const value = textArea.value;
   const split = value.split('\n');
-  console.log(split);
+  // console.log(split);
 
   let check = '';
-  for (const s of split) {
+  for (let i = 0; i < split.length; i++) {
     check += '✅';
-    console.log(`${s}   ${check}`);
+    const split2 = split[i].trim().toLowerCase().split('_');
+    const split3 = split2[1].charAt(0).toUpperCase().concat(split2[1].slice(1));
+
+    const finalSplit = split2[0].concat(split3);
+
+    console.log(finalSplit.padEnd(20, ' ') + check);
   }
 });
