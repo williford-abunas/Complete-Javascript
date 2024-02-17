@@ -368,3 +368,19 @@ button.addEventListener('click', function () {
     console.log(finalSplit.padEnd(20, ' ') + check);
   }
 });
+
+//string exercise
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.replaceAll('_', ' ')} from ${from
+    .slice(0, 3)
+    .toUpperCase()} to ${to.slice(0, 3).toUpperCase()} (${time.replace(
+    ':',
+    'h'
+  )})`;
+
+  const warning = `${output.includes('Delayed') ? '🔴' : ''}${output}`;
+
+  console.log(warning.padStart(45, ' '));
+}
