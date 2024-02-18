@@ -74,3 +74,64 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+//returns a new array
+console.log(arr.slice(2));
+console.log(arr.slice(1, -2));
+//shallow copy
+console.log(arr.slice()); //can chain
+console.log([...arr]);
+
+//splice changes the original arr
+console.log(arr.splice(-1)); //takes/deletes
+console.log(arr);
+const deleteCount = 2;
+console.log(arr.splice(1, deleteCount));
+
+//REVERSE .reverse()
+//reverses the original array
+
+//CONCAT joins array
+//arr1.concat(arr2)
+
+//JOIN joins elements into  a string with a separator specified
+
+//AT can also be used with strings
+const arr3 = [23, 11, 45];
+console.log(arr3.at(0));
+//getting last element
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.slice(-1)[0]);
+console.log(arr3.at(-1));
+
+//forEach loop
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+
+//continue and break does bot work in forEach
+movements.forEach((movement, i, arr) => {
+  if (movement > 0) {
+    console.log(`Movement ${i}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i}: You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+//forEach with Maps and Sets
+currencies.forEach((value, key, map) => {
+  console.log(`${key}: ${value}`);
+});
+
+//Set does not have key
+const currenciesUnique = new Set(['USD', 'GBP', 'EUR', 'USD']);
+
+currenciesUnique.forEach((value, _, map) => {
+  console.log(`${value}: ${value}`);
+});
