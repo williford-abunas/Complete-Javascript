@@ -135,3 +135,98 @@ const currenciesUnique = new Set(['USD', 'GBP', 'EUR', 'USD']);
 currenciesUnique.forEach((value, _, map) => {
   console.log(`${value}: ${value}`);
 });
+
+//Coding Practice Array
+const checkDogs = function (dogsJulia, dogsKate) {
+  const joinedArray = dogsJulia.slice(1, -2).concat(dogsKate);
+  joinedArray.forEach((dog, i) =>
+    dog >= 3
+      ? console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`)
+      : console.log(`Dog number ${i + 1} is still a puppy 🐶`)
+  );
+  console.log(joinedArray);
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+//map, filter and reduce
+//MAP - creates a new array
+//Filter - creates new array that passes a condition(true)
+//Reduce - reduce all elements into one single value
+
+const eurToUsd = 1.1;
+
+const movementsUSD = account1.movements.map(mov => mov * eurToUsd);
+
+console.log(account1.movements);
+console.log(movementsUSD);
+
+const description = account1.movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(description);
+
+//FILTER
+const deposits = movements.filter(mov => mov > 0);
+console.log(deposits);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+//REDUCE
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance);
+
+//Maximum value
+const maxNum = movements.reduce((acc, cur) => {
+  if (acc > cur) {
+    return acc;
+  } else return cur;
+}, movements[0]);
+
+console.log(maxNum);
+
+//CODING CHALLENGE 2
+// const calcAverageHumanAge = function (ages) {
+//   let humanAge;
+//   const humanYears = ages.map(age =>
+//     age <= 2 ? (humanAge = 2 * age) : (humanAge = 16 + age * 4)
+//   );
+
+//   const above18 = humanYears.filter(age => age > 18);
+//   console.log(above18);
+
+//   // const averageAdult =
+//   //   above18.reduce((acc, cur) => acc + cur, 0) / above18.length;
+
+//   const averageAdult = above18.reduce(
+//     (acc, cur, i, arr) => acc + cur / arr.length,
+//     0
+//   );
+//   console.log(averageAdult);
+//   return averageAdult;
+// };
+
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age > 18)
+    .reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
+  return humanAges;
+};
+
+console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+
+//CHAINING ARRAY METHODS
+
+const totalDepositInUsd = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, cur) => acc + cur);
+
+console.log(totalDepositInUsd);
