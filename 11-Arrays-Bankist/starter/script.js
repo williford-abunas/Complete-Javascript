@@ -253,3 +253,59 @@ const accountJess = function () {
   }
 };
 console.log(accountJess());
+
+//findIndex - returns the index
+//some and every - looks for condition
+//.includes looks for equality
+const anyDeposits = movements.some(mov => mov > 1500);
+console.log(anyDeposits);
+
+//flat and flatMap
+const arrEx = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arrEx.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
+
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+const overAll = allMovements.reduce((acc, mov) => acc + mov);
+console.log(overAll);
+
+const overAllChain = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, val) => acc + val);
+console.log(overAllChain);
+
+//Flatmap - 1 level deep
+const overAllChain2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, val) => acc + val);
+console.log(overAllChain);
+
+//Sorting arrays
+//.sort mutates the original array
+const owners = ['Will', 'Andrew', 'Yen'];
+console.log(owners.sort());
+
+//sorting numbers, sort is intended for strings (alphabetically)
+console.log(movements);
+//return < 0, A, B (keep order)
+//return > 0, B, A (switch order)
+
+//Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (b > a) return -1;
+// });
+
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+//Descending
+movements.sort((a, b) => b - a);
+
+console.log(movements);
