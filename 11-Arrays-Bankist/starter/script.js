@@ -309,3 +309,30 @@ console.log(movements);
 movements.sort((a, b) => b - a);
 
 console.log(movements);
+
+//Ways of Creating and Filling Arrays
+console.log(new Array(1, 2, 3, 4, 5));
+
+//1 argument defines array length
+const x = new Array(7);
+// console.log(x.fill(1));
+
+//fill(val, start, end)
+x.fill(1, 3, 5);
+
+//Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+//use case for converting Array out of node list from queryselectorAll
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value')
+  ).map(el => Number(el.textContent.replace('€', '')));
+
+  console.log(movementsUI);
+});
