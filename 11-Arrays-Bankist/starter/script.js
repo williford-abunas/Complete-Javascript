@@ -336,3 +336,128 @@ labelBalance.addEventListener('click', function () {
 
   console.log(movementsUI);
 });
+
+//Array Method Practice
+//1.
+const bankDepositsSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(acc => acc > 0)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(bankDepositsSum);
+//2.
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov < 0).length;
+// console.log(numDeposits1000);
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+console.log(numDeposits1000);
+
+//3. creating new object w/reduce
+const { deposits2, withdrawals2 } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (acc, cur) => {
+      acc[cur > 0 ? 'deposits2' : 'withdrawals2'] += cur;
+      return acc;
+    },
+    { deposits2: 0, withdrawals2: 0 }
+  );
+
+console.log(deposits2, withdrawals2);
+
+//4. Converting Any String to Title Case
+const titleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+  const exceptions = [
+    'a',
+    'an',
+    'the',
+    'but',
+    'or',
+    'on',
+    'in',
+    'with',
+    'not',
+    'too',
+    'is',
+  ];
+
+  const titleArg = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+
+  return capitalize(titleArg);
+};
+
+console.log(titleCase('this is a nice title'));
+console.log(titleCase('this is a LONG title but not too long'));
+
+//Coding Challenge
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+//1. add recommendedFood property to dogs object
+dogs.forEach(
+  dog => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28))
+);
+
+console.log(dogs);
+//2.
+// const SarahDogs = dogs.map(dog => dog.owners.includes('Sarah') && dog.weight >= dog.recommendedFood * 0.1 && dog.weight <= dog.recommendedFood * 0.1 ? 'eating okay' : 'not eating okay' );
+
+const checkSarahDog = () => {
+  const SarahDogs = dogs.find(dog => dog.owners.includes('Sarah'));
+
+  console.log(
+    SarahDogs.curFood > SarahDogs.recommendedFood * 0.9 &&
+      SarahDogs.curFood < SarahDogs.recommendedFood * 1.1
+      ? 'eating okay'
+      : 'not eating okay'
+  );
+};
+
+checkSarahDog();
+//3.
+
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+console.log(ownersEatTooLittle);
+
+//4.
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+
+//5.
+console.log(dogs.some(dog => dog.curFood === dog.recommendedFood));
+
+const checkEatingOk = dog =>
+  dog.curFood > dog.recommendedFood * 0.9 &&
+  dog.curFood < dog.recommendedFood * 1.1;
+
+//6.
+console.log(dogs.some(checkEatingOk));
+
+//7.
+const eatingOkay = dogs.filter(checkEatingOk);
+
+console.log(eatingOkay);
+
+//8.
+const sortDogs = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(sortDogs);
