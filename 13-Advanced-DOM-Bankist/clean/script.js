@@ -104,171 +104,33 @@ nav.addEventListener('mouseover', handleOver.bind(0.5));
 nav.addEventListener('mouseout', handleOver.bind(1));
 
 //Sticky nav
-// const initialCoords = section1.getBoundingClientRect();
-// console.log(initialCoords);
-// window.addEventListener('scroll', function (e) {
-//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// });
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+window.addEventListener('scroll', function (e) {
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
 
 //Intersection Observer API
-// const obsCallback = function (entries, observer) {
-//   entries.forEach(entry => console.log(entry));
-// };
-// const obsOptions = {
-//   root: null,
-//   threshold: 0.1,
-// };
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
-
-const header = document.querySelector('.header');
-const navHeight = nav.getBoundingClientRect().height;
-
-const stickyNav = function (entries) {
-  const [entry] = entries;
-  console.log(entry);
-
-  if (!entry.isIntersecting) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => console.log(entry));
 };
-
-const headerObserver = new IntersectionObserver(stickyNav, {
+const obsOptions = {
   root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
-});
-headerObserver.observe(header);
-
-//Reveal Sections
-const allSections = document.querySelectorAll('.section');
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-  entry.target.classList.remove('section--hidden');
-  observer.unobserve(entry.target);
+  threshold: 0.1,
 };
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
-allSections.forEach(section => {
-  sectionObserver.observe(section);
-  section.classList.add('section--hidden');
-});
-
-//Lazy loading images
-const imgTargets = document.querySelectorAll('img[data-src]');
-const loadImg = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-  //replace src with data-src
-  entry.target.src = entry.target.dataset.src;
-  entry.target.addEventListener('load', function () {
-    entry.target.classList.remove('lazy-img');
-  });
-
-  observer.unobserve(entry.target);
-};
-
-const imgObserver = new IntersectionObserver(loadImg, {
-  root: null,
-  threshold: 0,
-  rootMargin: '+200px',
-});
-imgTargets.forEach(img => imgObserver.observe(img));
-
-//Slider
-const slider = function () {
-  const slides = document.querySelectorAll('.slide');
-  const btnLeft = document.querySelector('.slider__btn--left');
-  const btnRight = document.querySelector('.slider__btn--right');
-  const dotContainer = document.querySelector('.dots');
-
-  let curSlide = 0;
-  const maxSlide = slides.length;
-
-  const createDots = function () {
-    slides.forEach((_, i) => {
-      dotContainer.insertAdjacentHTML(
-        'beforeend',
-        `<button class = "dots__dot" data-slide="${i}"></button>`
-      );
-    });
-  };
-
-  const activateDot = function (slide) {
-    document
-      .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
-
-    document
-      .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add('dots__dot--active');
-  };
-
-  const goToSlide = function (slide) {
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-    );
-  };
-
-  const nextSlide = function () {
-    if (curSlide === maxSlide - 1) {
-      curSlide = 0;
-    } else {
-      curSlide++;
-    }
-
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  };
-
-  const prevSlide = function () {
-    if (curSlide === 0) {
-      curSlide = maxSlide - 1;
-    } else {
-      curSlide--;
-    }
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  };
-
-  const init = function () {
-    createDots();
-    activateDot(0);
-    goToSlide(0);
-  };
-
-  init();
-
-  //Event Handlers
-
-  btnRight.addEventListener('click', nextSlide);
-  btnLeft.addEventListener('click', prevSlide);
-
-  document.addEventListener('keydown', function (e) {
-    console.log(e);
-    e.key === 'ArrowLeft' && prevSlide();
-    e.key === 'ArrowRight' && nextSlide();
-  });
-
-  dotContainer.addEventListener('click', function (e) {
-    if (e.target.classList.contains('dots__dot')) {
-      const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activateDot(slide);
-    }
-  });
-};
-
-slider();
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
 ///////////////////////////////////////////////////////////////////
 //LECTURE
 console.log(document.documentElement);
 console.log(document.head);
+
+const header = document.querySelector('.header');
+console.log(header);
+
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
 
 console.log(document.getElementById('section--1'));
 const allButtons = document.getElementsByTagName('button');
@@ -304,7 +166,7 @@ document
 
 //Styles, Attributes and Classes
 message.style.backgroundColor = '#37383d';
-message.style.width = '100%';
+message.style.width = '120%';
 //only works with inline styles e.g. set thru DOM style property
 console.log(message.style.color);
 console.log(message.style.backgroundColor);
@@ -426,18 +288,3 @@ logo.classList.contains('c');
 // [...h1.parentElement.children].forEach(function (el) {
 //   if (el !== h1) el.style.transform = 'scale(0.5)';
 // });
-
-document.addEventListener('DOMContentLoaded', function (e) {
-  console.log('HTML parsed', e);
-});
-
-window.addEventListener('load', function (e) {
-  console.log('page loaded', e);
-});
-
-//use case leaving confirmation
-window.addEventListener('beforeunload', function (e) {
-  e.preventDefault();
-  console.log(e);
-  e.returnValue = '';
-});
