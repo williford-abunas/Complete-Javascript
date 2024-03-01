@@ -55,24 +55,109 @@ class Car {
     this.make = make;
     this.speed = parseInt(speed);
   }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} going at ${this.speed} km/h`);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} braking at ${this.speed} km/h`);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
 }
 
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-  console.log(`${this.make} going at ${this.speed} km/h`);
-};
-
-Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(`${this.make} braking at ${this.speed} km/h`);
-};
+const Jeep = new Car('jeep', 120);
+console.log(Jeep.speedUS);
+console.log(Jeep);
+Jeep.speedUS = 50;
+console.log(Jeep.speed);
 
 const Toyota = new Car('toyota', '90');
-console.log(Toyota.accelerate());
-console.log(Toyota.brake());
-console.log(Toyota.brake());
-console.log(Toyota.accelerate());
+Toyota.accelerate();
+Toyota.brake();
+Toyota.brake();
+Toyota.accelerate();
 
+//Getters and Setters - use case for validation, e.g. check if expected value is inputted
+const account = {
+  owner: 'will',
+  movements: [200, 300, 400, 500],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+account.latest = 900;
+console.log(account.movements);
+
+class PersonCl {
+  constructor(fullName, age) {
+    (this.fullName = fullName), (this.age = age);
+  }
+
+  calcYear = function () {
+    return 2037 - this.age;
+  };
+  //setting property that already exist
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  //Static
+  static hey = function () {
+    return 'Hey There!';
+  };
+}
+
+const dan = new PersonCl('Dan Dan', 1980);
+console.log(dan.fullName);
+console.log(dan.calcYear());
+
+//Static Methods
+Array.from(document.querySelectorAll('h1'));
+console.log(PersonCl.hey());
+
+//Object.create - manually setting prototype of Objects
+const PersonProto = {
+  calcYear() {
+    return 2037 - this.age;
+  },
+
+  init(firstName, birthYear) {
+    (this.firstName = firstName), (this.birthYear = birthYear);
+  },
+};
+
+const boy = Object.create(PersonProto);
+boy.nameboy = 'Boy';
+boy.age = 1990;
+console.log(boy);
+console.log(boy.calcYear());
+console.log(boy.__proto__ === PersonProto);
+
+const loki = Object.create(PersonProto);
+loki.init('Loki', 1979);
+console.log(loki);
 /////////////////////---one code camp
 //Encapsulation
 // class BankAccount {
