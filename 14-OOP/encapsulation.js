@@ -1,1 +1,1 @@
-console.log('Hello')
+//Encapsulation - for privacy

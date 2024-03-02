@@ -154,35 +154,59 @@ pol.introduce()
 pol.calcYear()
 
 //ES6 Class
-
+//4 Class Fields
+//-1)Public fields
+//-2)Private fields
+//-3)Public methods
+//-4)Private methods
 class Account {
+  //1)pUBLIC FIELDS (instances)
+  locale = navigator.language
+
+  //2)private fields
+  #movements = []
+  #pin
   constructor(owner, currency, pin) {
     ;(this.owner = owner),
       (this.currency = currency),
-      (this.pin = pin),
-      (this.movements = []),
-      (this.locale = navigator.language)
+      (this.#pin = pin),
+      //protected property
+      // (this.#movements = []),
+      // (this.locale = navigator.language)
 
-    console.log(`Thanks for opening account, ${this.owner}`)
+      console.log(`Thanks for opening account, ${this.owner}`)
+  }
+
+  //3) Public methods
+  getMovements() {
+    return this.#movements
   }
 
   deposit(val) {
-    this.movements.push(val)
+    this.#movements.push(val)
+    return this
   }
 
   withdrawal(val) {
     this.deposit(-val)
+    return this
   }
 
-  approveLoan(val) {
-    return true
-  }
+  // approveLoan(val) {
+  //   return true
+  // }
 
   requestLoan(val) {
-    if (this.approveLoan(val)) {
+    if (this.#approveLoan(val)) {
       this.deposit(val)
       console.log(`Loan approved`)
+      return this
     }
+  }
+
+  //4) private methods
+  #approveLoan(val) {
+    return true
   }
 }
 
@@ -191,3 +215,71 @@ acc1.deposit(500)
 acc1.withdrawal(150)
 acc1.requestLoan(1000)
 console.log(acc1)
+console.log(acc1.getMovements())
+
+//Chaining
+acc1.deposit(50).deposit(35).requestLoan(100).withdrawal(1000)
+console.log(acc1.getMovements())
+
+//Coding challenge 4
+class CarCl {
+  constructor(make, speed) {
+    this.make = make
+    this.speed = parseInt(speed)
+  }
+
+  accelerate() {
+    this.speed += 10
+    console.log(`${this.make} going at ${this.speed} km/h`)
+    return this
+  }
+
+  brake() {
+    this.speed -= 5
+    console.log(`${this.make} braking at ${this.speed} km/h`)
+  }
+}
+
+class EVCl extends CarCl {
+  #charge
+  constructor(make, speed, charge) {
+    super(make, speed)
+    this.#charge = charge
+  }
+
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo
+    console.log(`${this.make} charging to ${chargeTo}`)
+    return this
+  }
+
+  brake() {
+    this.speed -= 10
+    console.log(`${this.make} braking at ${this.speed} km/h. Override.`)
+    return this
+  }
+}
+
+const ford = new EVCl('Ford', 100, 80)
+
+ford.accelerate().accelerate().chargeBattery(40).brake().accelerate()
+console.log(ford)
+
+// const EV = function (make, speed, charge) {
+//   Car.call(this, make, speed)
+//   this.charge = charge
+// }
+
+// EV.prototype = Object.create(Car.prototype)
+
+// EV.prototype.chargeBattery = function (chargeTo) {
+//   this.charge = chargeTo
+// }
+
+// EV.prototype.accelerate = function () {
+//   this.speed += 20
+//   this.charge -= this.charge * 0.01
+//   console.log(
+//     `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`
+//   )
+// }
