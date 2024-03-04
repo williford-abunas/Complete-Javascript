@@ -303,7 +303,3 @@ class App {
 }
 
 const app = new App();
-
-//Stretch
-1. edit workout
-2. delete a workout
