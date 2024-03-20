@@ -127,3 +127,78 @@ const getCountryData = function (country) {
 btn.addEventListener('click', function () {
   getCountryData('japan');
 });
+
+//Building promises
+// const lotteryPromise = new Promise(function (resolve, reject) {
+//   console.log('lottery is happening!');
+//   setTimeout(function () {
+//     if (Math.random() >= 0.5) {
+//       resolve('You WIN 😁');
+//     } else {
+//       reject(new Error('You lost 💩'));
+//     }
+//   }, 2000);
+// });
+
+// lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+// //Promisifying setTimeOut
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+// wait(2)
+//   .then(() => {
+//     console.log('I waited for 2 seconds');
+//     return wait(1);
+//   })
+//   .then(() => console.log('I waited for 1 second'))
+const imgContainer = document.querySelector('.images');
+
+const img1 = '/16-Asynchronous/starter/img/img-1.jpg';
+const img2 = '/16-Asynchronous/starter/img/img-2.jpg';
+const img3 = '/16-Asynchronous/starter/img/img-3.jpg';
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const newImg = document.createElement('img');
+
+    newImg.onload = function () {
+      resolve(newImg);
+    };
+
+    newImg.onerror = function () {
+      reject(new Error('Image not found.'));
+    };
+
+    newImg.src = imgPath;
+  });
+};
+
+createImage(img1)
+  .then(img => {
+    imgContainer.append(img);
+
+    return wait(2)
+      .then(() => {
+        img.style.display = 'none';
+      })
+      .then(() =>
+        createImage(img2).then(img => {
+          imgContainer.append(img);
+
+          return wait(2)
+            .then(() => {
+              img.style.display = 'none';
+            })
+            .then(() =>
+              createImage(img3).then(img => {
+                imgContainer.append(img);
+              })
+            );
+        })
+      );
+  })
+  .catch(err => console.error(err));
