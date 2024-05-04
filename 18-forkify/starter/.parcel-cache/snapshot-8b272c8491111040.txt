@@ -1,5 +1,6 @@
-9670
-113/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/recipeView.js1714827516827403836 0
+9676
+116/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty/fracty.js1714835991612265513 0
+113/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/recipeView.js1714836816132019102 0
 129/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/regenerator-runtime/README.md1714794936198324372 0
 119/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/regenerator-runtime1714794936168324381 1
 123/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/stage/README.md1714794925428327579 0
@@ -983,6 +984,7 @@
 154/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/object/get-own-property-descriptor.js1714794924778327782 0
 149/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/es/reflect/get-own-property-descriptor.js1714794924778327782 0
 145/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/full/reflect/get-own-metadata-keys.js1714794924778327782 0
+116/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty/readme.md1714835991622265506 0
 149/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/reflect/get-own-metadata-keys.js1714794924778327782 0
 140/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/reflect/get-metadata.js1714794924778327782 0
 141/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/full/reflect/get-metadata-keys.js1714794924778327782 0
@@ -2442,7 +2444,7 @@
 121/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/msgpackr/unpack.d.cts1714790993469491658 0
 129/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/stable/reflect/has.js1714794924818327769 0
 123/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/msgpackr/test-worker.js1714790993629491612 0
-118/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/.package-lock.json1714794936378324319 0
+118/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/.package-lock.json1714835991832265363 0
 122/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/htmlnano/.eslintignore1714790993219491730 0
 139/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/instance/filter-out.js1714794924658327818 0
 125/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/htmlnano/lib/htmlnano.cjs1714790993439491666 0
@@ -3376,7 +3378,7 @@
 131/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/full/symbol/iterator.js1714794924968327723 0
 147/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/transformer-json/src/JSONTransformer.js1714790993279491712 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/transformer-json/src1714790993259491721 1
-102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/model.js1714828067487242952 0
+102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/model.js1714833009513082734 0
 161/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-select/lib/general.js1714790993399491678 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/chrome-trace-event/README.md1714790993289491710 0
 131/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/source-map-js/lib/base64-vlq.js1714790993259491721 0
@@ -4943,7 +4945,7 @@
 139/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/full/reflect/define-property.js1714794924468327877 0
 118/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/plugin/src1714790993289491710 1
 150/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/lib/generator/create.js1714790994089491478 0
-102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/index.js1714828279647181705 0
+102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/index.js1714834930922579612 0
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/codeframe/lib/codeframe.js.map1714790994069491484 0
 134/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/node-resolver-core/LICENSE1714790993219491730 0
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/packager-js/src/.eslintrc.json1714790993579491625 0
@@ -5320,6 +5322,7 @@
 175/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/source-map/parcel_sourcemap_wasm/dist-node/parcel_sourcemap_wasm.js1714790993459491661 0
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@swc/helpers/src/_get_prototype_of.mjs1714790994309491414 0
 139/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/reporter-cli/lib/CLIReporter.js1714790993499491648 0
+121/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty/fracty.test.js1714835991612265513 0
 135/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@swc/helpers/src/_object_spread.mjs1714790994309491414 0
 131/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/regions/CL.js1714790993959491515 0
 117/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/anymatch/index.js1714791065729472133 0
@@ -5810,7 +5813,7 @@
 147/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/core/test/fixtures/config-node-pipeline1714790993419491674 1
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/transformer-html/lib1714790993349491692 1
 130/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/js-yaml/lib/schema/failsafe.js1714790993419491674 0
-99/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/package.json1714794936218324367 0
+99/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/package.json1714835991662265479 0
 153/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/lib/syntax/function/var.js1714790994209491443 0
 131/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/regions/RO.js1714790994339491407 0
 150/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/runtime-js/src/helpers/node/wasm-loader.js1714790993699491591 0
@@ -7005,6 +7008,7 @@
 132/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/proposals/error-cause.js1714794924508327865 0
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/download.js1714790994189491448 0
 139/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@swc/helpers/src/_non_iterable_rest.mjs1714790994309491414 0
+119/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty/package.json1714835991602265520 0
 145/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/es.typed-array.int32-array.js1714794924578327843 0
 156/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@swc/helpers/src/_class_apply_descriptor_destructure.mjs1714790994299491417 0
 136/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/ordered-binary/assets/powers-dre.png1714790993479491655 0
@@ -7777,6 +7781,7 @@
 122/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/domhandler/lib/node.js1714790993269491715 0
 129/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/domhandler/lib/index.d.ts.map1714790993319491702 0
 125/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/domhandler/lib/index.d.ts1714790993399491678 0
+121/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty/.gitattributes1714835991602265520 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/domhandler/lib/node.d.ts.map1714790993359491689 0
 110/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/parcel/lib1714790993289491710 1
 124/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/domhandler/lib/node.d.ts1714790993409491676 0
@@ -8449,7 +8454,7 @@
 135/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/internals/array-for-each.js1714794924318327925 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/css-what/lib/es/stringify.js1714790993429491669 0
 153/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/svgo/bin/svgo1714790993249491722 0
-104/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/package-lock.json1714794936278324349 0
+104/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/package-lock.json1714835991752265418 0
 147/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/css-text-box-trim.js1714790994139491463 0
 166/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-svgo/node_modules/svgo/plugins/preset-default.js1714790993739491579 0
 130/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/css-what/lib/es/index.d.ts.map1714790993479491655 0
@@ -9034,6 +9039,7 @@
 142/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/stable/string/virtual/match-all.js1714794925018327706 0
 146/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/css-touch-action.js1714790994149491460 0
 143/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/passwordrules.js1714790994329491409 0
+106/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/fracty1714835990722265883 1
 150/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/document-execcommand.js1714790994179491454 0
 161/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/lib/syntax/node/DeclarationList.js1714790994129491466 0
 153/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/lib/syntax/config/lexer.js1714790994159491458 0
