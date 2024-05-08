@@ -1,4 +1,4 @@
-9691
+9692
 114/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/previewView.js1715120589404216706 0
 118/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/is-number/index.js1714790993229491727 0
 119/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/is-number/README.md1714790993259491721 0
@@ -696,6 +696,7 @@
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/es.array.find-index.js1714794924518327862 0
 140/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/es.date.to-iso-string.js1714794924528327860 0
 135/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/es.symbol.search.js1714794924568327847 0
+116/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/addRecipeView.js1715166265802755744 0
 145/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/esnext.async-iterator.some.js1714794924598327838 0
 141/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/es.typed-array.reverse.js1714794924578327843 0
 146/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/modules/esnext.reflect.has-metadata.js1714794924618327831 0
@@ -1591,7 +1592,7 @@
 131/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/math/fscale.js1714794924768327784 0
 130/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/math/asinh.js1714794924328327921 0
 121/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/math1714794925368327598 1
-115/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/bookmarkView.js1715120631224201729 0
+115/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/views/bookmarkView.js1715161550844155619 0
 116/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features1714794925368327598 1
 120/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/package.json1714794925418327583 0
 132/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/stable/weak-set/index.js1714794924908327741 0
@@ -4321,7 +4322,7 @@
 151/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/lib/syntax/config/mix.js1714790994169491455 0
 161/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/index.js1714790993969491512 0
 161/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-select/lib/general.js1714790993399491678 0
-102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/model.js1715119007514681603 0
+102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/model.js1715174065802633930 0
 102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/dist/index.html1715095198370514567 0
 168/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/css-select/node_modules/dom-serializer/lib/esm/foreignNames.d.ts.map1714790993409491676 0
 137/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@swc/helpers/esm/_class_call_check.js1714790993899491533 0
@@ -4943,7 +4944,7 @@
 150/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/runtime-js/lib/helpers/node/html-loader.js1714790993569491631 0
 154/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/runtime-browser-hmr/src/loaders/.eslintrc.json1714790993439491666 0
 138/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/codeframe/lib/codeframe.js.map1714790994069491484 0
-102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/index.js1715119749844460310 0
+102/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/index.js1715173850672698527 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/full/number/range.js1714794925078327689 0
 133/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/graph/test/BitSet.test.js1714790993489491654 0
 121/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/packager-html1714790993309491704 1
@@ -5746,7 +5747,7 @@
 147/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/entities/lib/generated/decode-data-xml.d.ts.map1714790993519491643 0
 128/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/package-manager/test1714790993739491579 1
 165/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-svgo/node_modules/mdn-data/css/definitions.json1714790993479491655 0
-104/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/helpers.js1714869215104044685 0
+104/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/helpers.js1715174002332652000 0
 174/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-htmlnano/node_modules/css-tree/lib/common/SyntaxError.js1714790994069491484 0
 149/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/@parcel/optimizer-svgo/node_modules/css-tree/dist1714790993789491565 1
 130/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/core-js/features/math/scale.js1714794925108327679 0
@@ -8135,7 +8136,7 @@
 158/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/cjs/syntax/config/generator.cjs1714790993769491571 0
 133/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/ttf.js1714790994359491399 0
 155/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/csso/node_modules/css-tree/cjs/syntax/config/walker.cjs1714790994039491492 0
-103/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/config.js1715004181291589896 0
+103/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/src/js/config.js1715166174782781477 0
 153/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/css-overscroll-behavior.js1714790994119491469 0
 154/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/caniuse-lite/data/features/mediacapture-fromelement.js1714790994299491417 0
 140/home/williford/devacademy/side-projects/complete-javascript-course/18-forkify/starter/node_modules/dom-serializer/node_modules/entities/lib1714790993509491646 1
