@@ -690,7 +690,7 @@ const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerAddBookmark(controlAddBookmark);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResults);
     (0, _paginationViewJsDefault.default).addHandlerClick(controlPagination);
-    (0, _addRecipeViewJsDefault.default)._addHandlerUpload(controlAddRecipe);
+    (0, _addRecipeViewJsDefault.default).addHandlerUpload(controlAddRecipe);
 };
 init();
 
@@ -2553,7 +2553,7 @@ const createRecipeObject = function(data) {
 };
 const loadRecipe = async (id)=>{
     try {
-        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}/${id}`);
+        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}/${id}?key=${(0, _configJs.KEY)}`);
         state.recipe = createRecipeObject(data);
         if (state.bookmarks.some((bookmark)=>bookmark.id === id)) state.recipe.bookmarked = true;
         else state.recipe.bookmarked = false;
@@ -2566,13 +2566,16 @@ const loadRecipe = async (id)=>{
 const loadResults = async (query)=>{
     try {
         state.search.query = query;
-        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}?search=${query}`);
+        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}?search=${query}&key=${(0, _configJs.KEY)}`);
         state.search.results = data.data.recipes.map((rec)=>{
             return {
                 id: rec.id,
                 title: rec.title,
                 publisher: rec.publisher,
-                image: rec.image_url
+                image: rec.image_url,
+                ...rec.key && {
+                    key: rec.key
+                }
             };
         });
         state.search.page = 1;
@@ -2792,9 +2795,13 @@ class RecipeView extends (0, _viewJsDefault.default) {
       </div>
     </div>
 
-    <div class="recipe__user-generated">
-      
-    </div>
+          <div class="recipe__user-generated ${this._data.key ? "" : "hidden"}">
+            <svg>
+              <use href="${0, _iconsSvgDefault.default}.svg#icon-user"></use>
+            </svg>
+          </div>
+          
+
     <button class='btn--round btn--bookmark'>
       <svg class="">
         <use href="${0, _iconsSvgDefault.default}.svg#icon-bookmark${this._data.bookmarked ? "-fill" : ""}"></use>
@@ -3092,27 +3099,35 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./View.js");
 var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
+var _iconsSvg = require("url:../../img/icons.svg");
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class PreviewView extends (0, _viewJsDefault.default) {
     _parentElement = "";
     _generateMarkup() {
         const id = window.location.hash.slice(1);
-        return `<li class="preview">
-    <a class="preview__link ${this._data.id === id ? "preview__link--active" : ""}" href="#${this._data.id}">
-      <figure class="preview__fig">
+        return `
+    <li class="preview">
+      <a class="preview__link ${this._data.id === id ? "preview__link--active" : ""}" href="#${this._data.id}">
+        <figure class="preview__fig">
         <img src="${this._data.image}" alt="${this._data.title}" />
-      </figure>
-      <div class="preview__data">
+        </figure>
+        <div class="preview__data">
         <h4 class="preview__title">${this._data.title}</h4>
         <p class="preview__publisher">${this._data.publisher}</p>
         
-      </div>
-    </a>
-  </li>`;
+        <div class="preview__user-generated ${this._data.key ? "" : "hidden"}">
+        <svg>
+        <use href="${0, _iconsSvgDefault.default}.svg#icon-user"></use>
+        </svg>
+        </div>
+        </div>
+      </a>
+    </li>`;
     }
 }
 exports.default = new PreviewView();
 
-},{"./View.js":"5cUXS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6z7bi":[function(require,module,exports) {
+},{"./View.js":"5cUXS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"3umpu"}],"6z7bi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./View.js");
@@ -3204,7 +3219,7 @@ class AddRecipeView extends (0, _viewJsDefault.default) {
         this._btnClose.addEventListener("click", this.toggleWindow.bind(this));
         this._overlay.addEventListener("click", this.toggleWindow.bind(this));
     }
-    _addHandlerUpload(handler) {
+    addHandlerUpload(handler) {
         this._parentElement.addEventListener("submit", function(e) {
             e.preventDefault();
             const dataArr = [
