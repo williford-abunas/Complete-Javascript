@@ -608,7 +608,6 @@ const controlRecipes = async function() {
         alert(err);
     }
 };
-controlRecipes();
 [
     "hashchange",
     "load"
