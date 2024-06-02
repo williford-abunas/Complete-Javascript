@@ -604,8 +604,8 @@ const controlRecipes = async function() {
         await _modelJs.loadRecipe(id);
         // 2) Rendering recipe
         (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
-    } catch (err) {
-        alert(err);
+    } catch (error) {
+        (0, _recipeViewJsDefault.default).renderError();
     }
 };
 const init = ()=>{
@@ -2488,6 +2488,7 @@ const loadRecipe = async (id)=>{
         console.log(state.recipe);
     } catch (error) {
         console.error(error.message);
+        throw error;
     }
 };
 
@@ -2536,6 +2537,8 @@ var _fractyDefault = parcelHelpers.interopDefault(_fracty);
 class RecipeView {
     #parentEl = document.querySelector(".recipe");
     #data;
+    #errorMessage = "We could not find that recipe. Please try another one!";
+    #message = "Start by searching for a recipe or an ingredient. Have fun!";
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2556,6 +2559,36 @@ class RecipeView {
         this.#parentEl.innerHTML = "";
         this.#parentEl.insertAdjacentHTML("afterbegin", markup);
     };
+    renderError(message = this.#errorMessage) {
+        const markup = `
+      <div class="error">
+        <div>
+          <svg>
+            <use href="${(0, _iconsSvgDefault.default)}#icon-alert-triangle"></use>
+          </svg>
+        </div>
+        <p>${message}</p>
+      </div>
+    `;
+        this.#clear();
+        this.#parentEl.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderMessage(message = this.#message) {
+        const markup = `
+      <div class="message">
+        <div>
+          <svg>
+            <use href="${(0, _iconsSvgDefault.default)}#icon-smile"></use>
+          </svg>
+        </div>
+        <p>
+          ${message}
+        </p>
+      </div>
+    `;
+        this.#clear();
+        this.#parentEl.insertAdjacentHTML("afterbegin", markup);
+    }
     addHandlerRender(handler) {
         [
             "hashchange",
@@ -2654,7 +2687,7 @@ class RecipeView {
 }
 exports.default = new RecipeView();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp","fracty":"hJO4d"}],"loVOp":[function(require,module,exports) {
+},{"url:../../img/icons.svg":"loVOp","fracty":"hJO4d","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"loVOp":[function(require,module,exports) {
 module.exports = require("9bcc84ee5d265e38").getBundleURL("hWUTQ") + "icons.dfd7a6db.svg" + "?" + Date.now();
 
 },{"9bcc84ee5d265e38":"lgJ39"}],"lgJ39":[function(require,module,exports) {
