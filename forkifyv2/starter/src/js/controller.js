@@ -9,6 +9,7 @@ import addRecipeView from './views/addRecipeView.js';
 import 'core-js/stable';
 // polyfill async - await
 import 'regenerator-runtime/runtime';
+import { MODAL_CLOSE_SEC } from './config.js';
 
 if (module.hot) {
   module.hot.accept();
@@ -86,7 +87,31 @@ const controlBookmarks = () => {
 };
 
 const controlAddRecipe = async newRecipe => {
-  model.uploadRecipe(newRecipe);
+  try {
+    // Upload the new recipe data
+    await model.uploadRecipe(newRecipe);
+    console.log(model.state.recipe);
+
+    // Render recipe
+    recipeView.render(model.state.recipe);
+
+    // update bookmarks view
+    bookmarksView.render(model.state.bookmarks);
+
+    // Success message
+    addRecipeView.renderMessage();
+
+    // Change ID in url
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    //Close form window
+    setTimeout(() => {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error(`${err} 💩!`);
+    addRecipeView.renderError(err.message);
+  }
 };
 
 const init = () => {
