@@ -25,6 +25,11 @@ export default class View {
     this._parentEl.insertAdjacentHTML('afterbegin', markup);
   }
 
+  /**
+   * Update the DOM with the new data
+   * @param {Object | Object[]} data The new data to be rendered
+   * @returns {void}
+   */
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();
@@ -49,10 +54,18 @@ export default class View {
     });
   }
 
+  /**
+   * Clear the content of the parent element
+   * @returns {void}
+   */
   _clear() {
     this._parentEl.innerHTML = '';
   }
 
+  /**
+   * Render a loading spinner to the parent element
+   * @returns {void}
+   */
   renderSpinner = function () {
     const markup = `
     <div class="spinner">
@@ -65,6 +78,11 @@ export default class View {
     this._parentEl.insertAdjacentHTML('afterbegin', markup);
   };
 
+  /**
+   * Render an error message to the parent element
+   * @param {string} [message=this._errorMessage] The error message to be displayed
+   * @returns {void}
+   */
   renderError(message = this._errorMessage) {
     const markup = `
       <div class="error">
@@ -80,6 +98,11 @@ export default class View {
     this._parentEl.insertAdjacentHTML('afterbegin', markup);
   }
 
+  /**
+   * Render a success message to the parent element
+   * @param {string} [message=this._message] The message to be displayed
+   * @returns {void}
+   */
   renderMessage(message = this._message) {
     const markup = `
       <div class="message">

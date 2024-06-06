@@ -2649,9 +2649,6 @@ const init = ()=>{
     if (storage) state.bookmarks = JSON.parse(storage);
 };
 init();
-const clearBookmarks = ()=>{
-    localStorage.clear("bookmarks");
-};
 const uploadRecipe = async (newRecipe)=>{
     try {
         const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].startsWith("ingredient") && entry[1] !== "").map((ing)=>{

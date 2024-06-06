@@ -11,10 +11,18 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { MODAL_CLOSE_SEC } from './config.js';
 
+/**
+ * Handle hot module replacement (HMR) for development
+ */
 if (module.hot) {
   module.hot.accept();
 }
 
+/**
+ * Control the rendering of the recipe view
+ * @async
+ * @returns {void}
+ */
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -35,6 +43,11 @@ const controlRecipes = async function () {
   }
 };
 
+/**
+ * Control the rendering of the search results view
+ * @async
+ * @returns {void}
+ */
 const controlSearchResults = async () => {
   try {
     // get query
@@ -55,6 +68,11 @@ const controlSearchResults = async () => {
   }
 };
 
+/**
+ * Control the rendering of the pagination view
+ * @param {number} goToPage - The page number to navigate to
+ * @returns {void}
+ */
 const controlPagination = goToPage => {
   // render new results
   resultsView.render(model.getSearchResultsPage(goToPage));
@@ -62,6 +80,11 @@ const controlPagination = goToPage => {
   paginationView.render(model.state.search);
 };
 
+/**
+ * Control the updating of the recipe servings
+ * @param {number} newServings - The new number of servings
+ * @returns {void}
+ */
 const controlServings = newServings => {
   // update the recipe servings (in state)
   model.updateServings(newServings);
@@ -70,6 +93,10 @@ const controlServings = newServings => {
   recipeView.update(model.state.recipe);
 };
 
+/**
+ * Control the adding or removing of a bookmark
+ * @returns {void}
+ */
 const controlAddBookmark = () => {
   // Add or remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
@@ -82,10 +109,20 @@ const controlAddBookmark = () => {
   bookmarksView.render(model.state.bookmarks);
 };
 
+/**
+ * Control the rendering of the bookmarks view
+ * @returns {void}
+ */
 const controlBookmarks = () => {
   bookmarksView.render(model.state.bookmarks);
 };
 
+/**
+ * Control the adding of a new recipe
+ * @async
+ * @param {Object} newRecipe - The new recipe data
+ * @returns {void}
+ */
 const controlAddRecipe = async newRecipe => {
   try {
     // Upload the new recipe data
@@ -114,6 +151,10 @@ const controlAddRecipe = async newRecipe => {
   }
 };
 
+/**
+ * Initialize the application
+ * @returns {void}
+ */
 const init = () => {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);

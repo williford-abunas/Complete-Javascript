@@ -1,9 +1,19 @@
 import View from './View.js';
 import icons from 'url:../../img/icons.svg';
 
+/**
+ * View for the Preview markup to be rendered in the results and bookmarks list
+ * @extends View
+ */
 class PreviewView extends View {
   _parentEl = '';
 
+  /**
+   * Generate the markup for each recipe in the results and bookmarks list
+   * @override
+   * @returns {string} The generated markup
+   * @protected
+   */
   _generateMarkup() {
     const id = window.location.hash.slice(1);
     return `
