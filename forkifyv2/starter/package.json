@@ -1,11 +1,11 @@
 {
   "name": "forkifyv2",
   "version": "1.0.0",
-  "description": "Recipe App",
-  "main": "index.js",
+  "description": "Recipe Application",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Williford Abunas",
   "license": "ISC",
