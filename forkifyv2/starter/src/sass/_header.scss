@@ -9,6 +9,32 @@
     margin-left: 4rem;
     height: 4.6rem;
     display: block;
+    filter: hue-rotate(200deg) saturate(1.2) brightness(0.9);
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      right: -0.5rem;
+      bottom: -0.5rem;
+      background: linear-gradient(135deg, $color-grad-1, $color-grad-2);
+      border-radius: 0.8rem;
+      opacity: 0.1;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+    
+    &:hover {
+      filter: hue-rotate(200deg) saturate(1.4) brightness(1.1);
+      transform: scale(1.05);
+      
+      &::before {
+        opacity: 0.2;
+      }
+    }
   }
 }
 
